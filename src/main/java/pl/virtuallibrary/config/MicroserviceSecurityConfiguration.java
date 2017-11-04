@@ -1,9 +1,5 @@
 package pl.virtuallibrary.config;
 
-import pl.virtuallibrary.security.AuthoritiesConstants;
-import pl.virtuallibrary.security.jwt.JWTConfigurer;
-import pl.virtuallibrary.security.jwt.TokenProvider;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -14,6 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
+import pl.virtuallibrary.security.AuthoritiesConstants;
+import pl.virtuallibrary.security.jwt.JWTConfigurer;
+import pl.virtuallibrary.security.jwt.TokenProvider;
 
 @Configuration
 @EnableWebSecurity

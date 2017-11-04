@@ -162,6 +162,7 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-annotations"
     compile "com.fasterxml.jackson.core:jackson-databind"
     compile "com.fasterxml.jackson.module:jackson-module-afterburner"
+    compile "com.google.apis:google-api-services-books:v1-rev93-1.23.0"
     compile ("com.ryantenney.metrics:metrics-spring:${metrics_spring_version}")
     compile "org.apache.commons:commons-lang3:${commons_lang_version}"
     compile "commons-io:commons-io:${commons_io_version}"

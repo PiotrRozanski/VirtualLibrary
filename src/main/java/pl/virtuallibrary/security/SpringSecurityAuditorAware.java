@@ -1,9 +1,8 @@
 package pl.virtuallibrary.security;
 
-import pl.virtuallibrary.config.Constants;
-
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
+import pl.virtuallibrary.config.Constants;
 
 /**
  * Implementation of AuditorAware based on Spring Security.

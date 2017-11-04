@@ -1,8 +1,8 @@
 package pl.virtuallibrary;
 
-import pl.virtuallibrary.config.DefaultProfileUtil;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import pl.virtuallibrary.config.DefaultProfileUtil;
 
 /**
  * This is a helper Java class that provides an alternative to creating a web.xml.
