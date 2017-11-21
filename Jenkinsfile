@@ -5,16 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 checkout scm
+                sh './gradlew build'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh './gradlew test'
             }
         }
     }
