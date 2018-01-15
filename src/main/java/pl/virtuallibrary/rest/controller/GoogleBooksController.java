@@ -7,11 +7,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import pl.virtuallibrary.application.EbookInformationCommand;
 import pl.virtuallibrary.rest.request.BookInformationRequest;
 import pl.virtuallibrary.service.GoogleService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/google")
+@CrossOrigin("*")
 @Api(value = "Google Books", description = "The operations getting the details of books")
 public class GoogleBooksController {
 
@@ -33,14 +37,24 @@ public class GoogleBooksController {
 
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "books/download/details", produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    @ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Successfully downloaded details of books"),
+        @ApiResponse(code = 500, message = "Internal Server Error")
+    })
+    public void downloadBooksDetails() {
+        googleService.downloadBooksInformations();
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "books/details", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Successfully retrieved details of books"),
         @ApiResponse(code = 500, message = "Internal Server Error")
     })
-    public void getBooksDetails() {
-        googleService.downloadBooksInformations();
+    public List<EbookInformationCommand> getBooksDetails() {
+        return googleService.getBooksInformations();
     }
 
 }
