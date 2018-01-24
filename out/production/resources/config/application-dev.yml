@@ -83,13 +83,13 @@ jhipster:
         version: V_1_1 # To use HTTP/2 you will need SSL support (see above the "server.ssl" configuration)
     # CORS is disabled by default on microservices, as you should access them through a gateway.
     # If you want to enable it, please uncomment the configuration below.
-    # cors:
-        # allowed-origins: "*"
-        # allowed-methods: "*"
-        # allowed-headers: "*"
-        # exposed-headers: "Authorization"
-        # allow-credentials: true
-        # max-age: 1800
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+        exposed-headers:
+        allow-credentials: false
+        max-age: 1800
     security:
         authentication:
             jwt:
@@ -111,16 +111,16 @@ jhipster:
             enabled: false
             endpoint: /prometheusMetrics
         logs: # Reports Dropwizard metrics in the logs
-            enabled: false
+            enabled: true
             report-frequency: 60 # in seconds
     logging:
         logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
-            enabled: false
+            enabled: true
             host: localhost
             port: 5000
             queue-size: 512
         spectator-metrics: # Reports Spectator Circuit Breaker metrics in the logs
-            enabled: false
+            enabled: true
             # edit spring.metrics.export.delay-millis to set report frequency
 
 
