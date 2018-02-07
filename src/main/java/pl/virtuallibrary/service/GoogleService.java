@@ -30,6 +30,7 @@ public class GoogleService {
     }
 
     public void downloadBooksInformations() {
+        completeInformationRepository.deleteAll();
         final List<Ebook> booksInformations = informationRepository.findAll();
         for (final Ebook information: booksInformations) {
             final String title = information.getName().replace(".pdf", "");
